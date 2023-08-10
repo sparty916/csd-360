@@ -1,0 +1,45 @@
+<!-- pj ellis - module 5 - csd 360 - 4/8/2023 -->
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+        <script type = "text/javascript">
+            function rollDice(){
+            document.form1.dice1.value = Math.floor((Math.random() * 6) + 1);
+            document.form1.dice2.value = Math.floor((Math.random() * 6) + 1);
+            document.form1.total.value = parseInt(document.form1.dice1.value) +
+            parseInt(document.form1.dice2.value);
+            var total = parseInt(document.form1.dice1.value) +
+            parseInt(document.form1.dice2.value);
+            switch(total){
+                case 2: document.form1.total.value = "Snake Eyes"; /* 2 */
+                break;
+                case 7:
+                case 11: document.form1.total.value = "You Win"; /* 7 or 11 */
+                break;
+                case 12: document.form1.total.value = "Box Cars"; /* 12 */
+                break;
+                default: document.form1.total.value = total; /* All remaining values */              
+             }
+            }
+           </script>        
+    </head>
+    <body>              
+        <h1>Module 5 Assignment</h1>
+        <h2>Roll The Dice</h2>        
+           <form name='form1'>
+            <table border='1'>
+            <tr>
+            <td> Dice 1 </td>
+            <td> <input type='text' name='dice1' /> </td>
+            <td> Dice 2 </td>
+            <td> <input type='text' name='dice2' /> </td>
+            <td> <input type='button' name='button1' onclick='rollDice()' value=' Roll Dice ' /> </td>
+            <td> Total </td>
+            <td> <input type='text' name='total' /> </td>
+            </tr>
+            </table>
+            <input type='button' name='button5' value='Reset' onclick='reset()' />
+           </form>
+    </body>
+</html>

@@ -1,0 +1,119 @@
+<!-- pj ellis - module 9 - csd 360 - 4/23/23 -->
+<!-- create a function titled counter that takes an array of numbers as the parameter. 
+    The function is then to return an array holding the numbers of negative elements, 
+    zeros, and values greater than zero in the given array parameter. -->
+
+    <!DOCTYPE html>
+
+    <html lang='en'>
+        <head>
+            <title>Arrays</title>
+            <!-- link to CSS -->
+            <link href="Mod9style.css" type="text/css" rel="stylesheet" >
+            <script>
+                var numbers = [1, 2, 3, 5, 9, 0, -2, -4, 0, 101, -250, 0, -22, 45];
+                var counts = counter(numbers);
+    
+                function counter(arr) {
+                    let pos_count = 0;
+                    let neg_count = 0;
+                    let zero_count = 0;
+                    
+                    for (let i = 0; i < arr.length; i++) {
+                        if (arr[i] < 0) {
+                            neg_count++;
+                        }
+                        if (arr[i] === 0) {
+                            zero_count++;
+                        }
+                        if (arr[i] > 0) {
+                            pos_count++;
+                        }
+                    }
+                    return {pos_count, neg_count, zero_count};
+                }
+    
+                var negNumber = [];
+                var zeroNumber = [];
+                var posNumber = [];
+    
+                function sort(arr) {
+                    for(var i = 0; i <arr.length; i++) {
+                        if (arr[i] < 0) {
+                            negNumber.push(arr[i]);
+                        }
+                        if (arr[i] == 0) {
+                            zeroNumber.push(arr[i]);
+                        }
+                        if (arr[i] > 0) {
+                            posNumber.push(arr[i]);
+                        }
+                    }
+                }
+    
+                function printArr(arr) {
+                     var text = "<h4>";
+                         for(var i = 0; i < arr.length-1; i++) {                       
+                            text += arr[i] + ", ";
+                            }
+                            text += arr[i] + "</h4>";
+                        return text;
+                    }                
+            </script>
+        </head>
+        <body>
+            <div class="container">
+                <div class="title">
+                    <h1>Module 9 Assignment</h1>
+                    <p>Create a new array holding the numbers of negative numbers, zeros, and positive numbers.</p>
+                </div>
+                <div class="original">
+                    <h1>Original Array</h1>
+                    <div class="cards">
+                        <script>
+                            document.write(printArr(numbers));
+                        </script>
+                        <p id="length"></p>
+                        <script>                    
+                            document.getElementById("length").innerHTML = "<i>Total Number Elements in Array: " + numbers.length + "</i>";
+                        </script>
+                    </div>
+                </div>
+                <div class="counted">
+                    <h1>Counted Array</h1>
+                    <script>
+                        sort(numbers);
+                    </script>
+                    <div class="columns">
+                        <div class="cards">
+                            <h3>Negative Number Elements</h3>
+                            <h1 id="negative"></h1>
+                            <script>
+                                document.getElementById("negative").innerHTML = counts.neg_count ;
+                                document.write(printArr(negNumber));
+                            </script>
+                        </div>
+                        <div class="cards">
+                            <h3>Zero Number Elements</h3>
+                            <h1 id="zero"></h1>
+                            <script>
+                                document.getElementById("zero").innerHTML = counts.zero_count;
+                                document.write(printArr(zeroNumber));
+                            </script>
+                        </div>
+                        <div class="cards">
+                            <h3>Positive Number Elements</h3>
+                            <h1 id="positive"></h1>
+                            <script>
+                                document.getElementById("positive").innerHTML = counts.pos_count;
+                                document.write(printArr(posNumber));
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="endtitle">
+                    <p><a href="../index.html">Back to Landing Page</a></p>
+                </div>
+            </div>
+        </body>
+    </html>

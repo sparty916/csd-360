@@ -1,0 +1,74 @@
+<!-- pj ellis - module 8 - csd 360 - 4/16/23 -->
+<!-- Create a web page that displays a table of the values of 4 to 14 displaying their: 
+    Initial Value, Square Root (w/two digit decimal point), Base to power of 2, and 
+    Base to power of 3.  Display a table containing values using loop iteration, 
+    ensuring you include methods sqrt() and pow(). -->
+    
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+        <title>Display Table of Values</title>
+        <style>
+            body {
+                background-color: rgba(3, 73, 3, 0.2);
+                font-family: Verdana, Arial, sans-serif;
+            }
+            table {
+                width: 750px;
+                background-color: white;
+                box-shadow: 10px 10px 10px grey;
+                border-collapse: collapse;               
+            }
+            th, td {
+                text-align: center;                         
+            }
+            th {
+                background-color: darkgreen;
+                color: white;
+            }
+            tr.even {
+                background-color: lightgray;
+            }
+            
+        </style>
+        <script>
+            function display() {                
+                for(var i = 4; i<=14; i++) {
+                    if (i % 2 == 0) {
+                        document.write("<tr class=\"even\">");
+                        document.write("<td>" + i + "</td>");
+                        document.write("<td>" + ((Math.sqrt(i)).toFixed(2)) + "</td>");
+                        document.write("<td>" + (Math.pow(i, 2)) + "</td>");
+                        document.write("<td>" + (Math.pow(i, 3)) + "</td>");
+                        document.write("</tr>");
+                    }
+                    else {
+                        document.write("<tr>");
+                        document.write("<td>" + i + "</td>");
+                        document.write("<td>" + ((Math.sqrt(i)).toFixed(2)) + "</td>");
+                        document.write("<td>" + (Math.pow(i, 2)) + "</td>");
+                        document.write("<td>" + (Math.pow(i, 3)) + "</td>");
+                        document.write("</tr>");
+                    }
+                }
+            }
+        </script>        
+    </head>
+    <body>              
+        <h1>Module 8 Assignment</h1>
+        <h2>Display Table Containing the Values Using Loop Iteration</h2>
+        <table border="2">
+            <tr>
+                <th>Initial Value</th>
+                <th>Square Root</th>
+                <th>Power of 2</th>
+                <th>Power of 3</th>
+            </tr>
+            <script>
+                display();
+            </script>
+        </table>
+        <p><a href="../index.html">Back to Landing Page</a></p>
+    </body>
+</html>

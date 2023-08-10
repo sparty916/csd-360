@@ -1,0 +1,30 @@
+/*pj ellis - module 3 - csd 360 - css code*/
+
+body {
+    font-family: "Oswald", Verdana, Arial, sans-serif;}
+
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+h1, h2, h3, h4 {
+    background-color: #043b04;
+    color: #fff;
+    border: 1px solid #D6A800;
+    padding: 10px;
+}
+
+a:link {
+    color: #122eca;
+    text-decoration: none;
+}
+
+a:visited {
+    color:#cddd3c;
+}
+
+a:hover {
+    color: #525153;
+}

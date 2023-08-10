@@ -1,0 +1,77 @@
+<!-- pj ellis - module 6 - csd 360 - 4/16/23 -->
+<!-- Using a for loop, a while loop, and a do/while loop to display out the Fibonacci Numbers -->
+
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+        <title>Fibonacci Numbers</title>
+        <style>
+            body {
+            background-color: rgba(3, 73, 3, 0.2);
+            font-family: Verdana, Arial, sans-serif;
+            }
+            .columns {
+            display: grid;
+            grid-template-columns: 250px 250px 250px;
+            }
+            .card {
+            border: 2px solid black;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 10px 10px 10px grey;            
+            padding: 12px;
+            transition: 0.3s;
+            margin: 10px;
+            overflow: hidden;
+            }
+            h3 {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>              
+        <h1>Module 6 Assignment</h1>
+        <h2>Fibonacci Numbers</h2>
+        <div class="columns">
+            <div class="card">
+                <h3>For Loop</h3>
+                <script>
+                    var x = 1, y = 1, z, i;
+                    for (i = 1; i <= 30; i++) {
+                        document.write("<br>" + i + " - " + x);
+                        z = x + y;
+                        x = y;
+                        y = z;
+                    }
+                </script>
+                </div>
+                <div class="card">
+                    <h3>While Loop</h3>
+                    <script>
+                        var x = 1, y = 1, z, i = 1;
+                        while (i <= 30) {
+                            document.write("<br>" + i + " - " + x);
+                            z = x + y;
+                            x = y;
+                            y = z;
+                            i++;
+                        }
+                    </script>
+                </div>
+                <div class="card">
+                    <h3>Do/While Loop</h3>
+                    <script>
+                        var x = 1, y = 1, z, i = 1;
+                        do {
+                            document.write("<br>" + i + " - " + x);
+                            z = x + y;
+                            x = y;
+                            y = z;
+                            i++;
+                        } while (i <= 30)
+                    </script>
+                </div>
+        <p><a href="../index.html">Back to Landing Page</a></p>
+    </body>
+</html>

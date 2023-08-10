@@ -1,0 +1,77 @@
+/*pj ellis - module 11 - csd 360 - css code*/
+
+body {
+    background-color: rgba(3, 73, 3, 0.2);
+    font-family: Verdana, Arial, sans-serif;
+}
+
+.container {
+    margin-top: 50px;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+.display {
+    text-align: center;
+    align-items: center;
+    width: 850px;
+    padding: 10px;
+    font-family: 'Castoro Titling', cursive;
+}
+
+.mainImage, .galleryOfImages {
+    width: 850px;
+    align-items: center;
+}
+
+.mainImage img {
+    border: 5pt solid #043b04;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.title, .endtitle {
+    width: 850px;
+    background-color: #043b04;
+    color: #fff;
+    border: 1px solid #D6A800;
+    padding: 10px;
+}
+
+figcaption {
+    font-family: 'Bilbo', cursive;
+    font-size: 60pt;
+    font-style: italic;
+    padding: 25px;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    font-size:medium;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(214, 217, 219);
+    box-shadow: 5px 5px 5px grey;
+    opacity: .75;
+}
+
+table {
+    width: 850px;
+    margin: 0px auto;
+    border-spacing: 5px 5px;
+}
+
+td {
+    padding: 5px;
+}
+
+
+
+table img:hover {
+    box-shadow: 0 0 20px gold;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}

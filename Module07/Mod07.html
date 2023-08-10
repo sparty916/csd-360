@@ -1,0 +1,64 @@
+<!-- pj ellis - module 7 - csd 360 - 4/19/2023 -->
+<!-- Create an array of 10 favorite sport teams. Using a for loop, print the array 
+    first in the original array order and then in reverse order. -->
+
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+        <title>Sports Teams</title>
+        <style>
+            body {
+            background-color: rgba(3, 73, 3, 0.2);
+            font-family: Verdana, Arial, sans-serif;
+            }
+            .columns {
+            display: grid;
+            grid-template-columns: 300px 300px;
+            }
+            .card {
+            border: 2px solid black;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 10px 10px 10px grey;            
+            padding: 12px;
+            transition: 0.3s;
+            margin: 10px;
+            overflow: hidden;
+            }
+            h3 {
+                text-align: center;
+            }
+        </style>
+        <script>
+            var sports = ["Chicago Cubs", "St. Louis Cardinals", "Orlando Magic", "Chicago Bears", "Orlando City Soccer Club",
+            "Boston Red Sox", "New York Yankees", "Dallas Cowboys", "Chicago Bulls", "Indianapolis Colts",]
+        </script>       
+    </head>
+    <body>              
+        <h1>Module 7 Assignment</h1>
+        <h2>10 Sports Team</h2>
+        <div class="columns">
+            <div class="card">
+                <h3>Original Order</h3>
+                <script>
+                document.write("<ul>");
+                    for(var i = 0; i < sports.length; i++) {
+                        document.write("<li>" + sports[i] + "</li>");
+                    }   
+                document.write("</ul>");
+                </script>
+            </div>
+            <div class="card">
+                <h3>Reverse Order</h3>
+                <script>
+                    document.write("<ul>");
+                    for(var i = sports.length - 1; i >= 0; i--) {
+                        document.write("<li>" + sports[i] + "</li>");
+                    }   
+                    document.write("</ul>");
+                </script>
+            </div>
+        <p><a href="../index.html">Back to Landing Page</a></p>
+    </body>
+</html>

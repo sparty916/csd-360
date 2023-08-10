@@ -1,0 +1,123 @@
+<!-- pj ellis - module 11 - csd 360  -->
+<!-- Create a page that alters the DOM based on user input.  Create a function 
+    that is executed when an image is clicked, using the "onclick” MouseEvent-->
+
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+        <title>Module 11 - DOM</title>
+        
+        <link href="mod11style.css" type="text/css" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bilbo&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap" rel="stylesheet">
+
+        <script>
+            const lotrPhotos = ["frodo2.jpg", "sam2.jpg", "pippin2.jpg", "merry2.jpg", "legolas2.jpg", 
+            "gimli2.jpg", "aragorn2.jpg", "gandalf2.jpg", "boromir2.jpg", "fellowship.jpg", "lotrMainb.jpg"];
+
+            const lotrCaptions = ["Frodo Baggins", "Samwise Gamgee", "Peregrin Took - 'Pippin'", 
+            "Meriadoc Brandybuck - 'Merry'", "Legolas", "Gimli", "Aragorn", "Gandalf", "Boromir", "The Fellowship", 
+            ""];
+
+            function displayToMain(image, caption) {
+                document.getElementById("mainimg").src=lotrPhotos[image];
+                document.getElementById("mainimg").alt=lotrCaptions[caption];
+                document.getElementById("maincap").innerHTML=lotrCaptions[caption];
+            }
+
+            let curImg;
+
+            function setOpacity(imgID) {
+                if(curImg === undefined) {
+                    curImg = document.getElementById(imgID);
+                    curImg.style.opacity = ".5";
+                }
+                else {
+                    let newImg = document.getElementById(imgID);
+                    newImg.style.opacity=".5";
+                    curImg.style.opacity="1";
+                    curImg = newImg;
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">              
+                <h1>Module 11 Assignment</h1>
+                <h3>DOM</h3>
+                <p>Create a page that alters the DOM based on user input.  Create a function 
+                that is executed when an image is clicked, using the onclick MouseEvent</p>
+            </div>
+            <div class="display">
+                <h1>The Members of The Fellowship of the Ring</h1>                
+                <div class="mainImage">
+                    <img src="lotrMainb.jpg" id="mainimg" alt="The Fellowship of the Ring" 
+                    width="98%" height="auto">
+                    <figcaption id="maincap"></figcaption>
+                </div>
+                <div class="galleryOfImages">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="legolas3.jpg" id="legolas" alt="Legolas" width="150px" height="auto"
+                                onclick="displayToMain(4, 4); setOpacity('legolas')">
+                            </td>
+                            <td>
+                                <img src="aragorn3.jpg" id="aragorn" alt="Aragorn" width="150px" height="auto"
+                                onclick="displayToMain(6, 6); setOpacity('aragorn')">
+                            </td>
+                            <td>
+                                <img src="gandalf3.jpg" id="gandalf" alt="Gandalf" width="150px" height="auto"
+                                onclick="displayToMain(7, 7); setOpacity('gandalf')">
+                            </td>
+                            <td>
+                                <img src="boromir3.jpg" id="boromir" alt="Boromir" width="150px" height="auto"
+                                onclick="displayToMain(8, 8); setOpacity('boromir')">
+                            </td>
+                            <td>
+                                <img src="gimli3.jpg" id="gimli" alt="Gimli" width="150px" height="auto"
+                                onclick="displayToMain(5, 5); setOpacity('gimli')">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frodo3.jpg" id="frodo" alt="Frodo Baggins" width="150px" height="auto"
+                                onclick="displayToMain(0, 0); setOpacity('frodo')">
+                            </td>
+                            <td>
+                                <img src="sam3.jpg" id="sam" alt="Samwise Gamgee" width="150px" height="auto"
+                                onclick="displayToMain(1, 1); setOpacity('sam')">
+                            </td>
+                            <td>
+                                <img src="jrrt2.png" id="logo" alt="J.R.R. Tolien" width="150px" height="auto"
+                                onclick="displayToMain(9, 9); setOpacity('logo')">
+                            </td>
+                            <td>
+                                <img src="merry3.jpg" id="merry" alt="Meriadoc Brandybuck - 'Merry'" width="150px" height="auto"
+                                onclick="displayToMain(3, 3); setOpacity('merry')">
+                            </td>
+                            <td>
+                                <img src="pippin3.jpg" id="pippin" alt="Peregrin Took - 'Pippin'" width="150px" height="auto"
+                                onclick="displayToMain(2, 2); setOpacity('pippin')">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="reset">
+                    <button onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='.75'" onclick="displayToMain(10, 10); curImg.style.opacity='1'">RESET</button>
+                </div>
+            </div>
+            <div class="endtitle">
+                <p><a href="../index.html">Back to Landing Page</a></p>
+            </div>
+        </div>
+    </body>
+</html>

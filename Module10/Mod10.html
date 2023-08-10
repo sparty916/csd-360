@@ -1,0 +1,89 @@
+<!-- pj ellis - module 10 - csd 360 - 4/23/23 -->
+<!-- Create a page with style alterations based on user events such as an 
+    image change, font style and/or color, and background color. -->
+
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+        <title>Module 10 - Events</title>
+        <!-- link to CSS -->
+        <link href="mod10style.css" type="text/css" rel="stylesheet" >
+        <script>
+            function showGame() {
+                document.getElementById('game').style.display = 'block';
+                document.getElementById("playGame").style.display = 'none';
+                document.body.style.background = 'rgba(3, 73, 3, 0.2)';                
+            }
+
+            let natParks = ["Yosemite National Park", "Great Smokey Mountains National Park", 
+            "Sequoia National Park", "Grand Canyon National Park"];
+
+            function answer(obj, a) {
+                obj.innerHTML = natParks[a]
+            }
+
+            let correctResponses = ["Maybe You Should Try Again?", "You <em><ins>Need</ins></em> To Get Outside More!", 
+            "Not <i>Too</i> Bad!", "Nice! You Must Enjoy Adventures!", "<i>AWESOME JOB!</i><br />Are You A Park Ranger?"];
+            
+            function correct(a) {
+                document.getElementById("response").innerHTML = correctResponses[a];
+            }                  
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                <h1>Module 10 Assignment</h1>
+                <div id="playGame">
+                    <h3>Events</h3>
+                    <p>Create a page with style alterations based on user events such as an image change, 
+                    font style and/or color, and background color.</p>
+                    <button onclick="showGame()" id="playGameButton">Let's Play A Game</button>
+                </div>
+            </div>
+            <div class="display">
+                <div id="game">
+                    <h1>Guess Who? - National Parks Edition</h1>                    
+                    <h3>Can you name these National Parks?</h3>
+                    <p onmouseover="this.style.color='green';"
+                    onmouseout= "this.style.color='black';"><i>Hover over black board to reveal an image of a National Park</i></p>
+                    <div class="columns">
+                        <div class="cards">
+                            <img onmouseenter="YNP.src='yosemite.jpg'; document.getElementById('ans1').style.display='block'";
+                            name = "YNP" src="blank.jpg" alt="Yosemite National Park" width="100%" height="auto">
+                            <p id="ans1" onclick="answer(this, 0)">Click Here for the Answer!</p>                        
+                        </div>
+                        <div class="cards">
+                            <img onmouseenter="GSMNP.src='smokey.jpg'; document.getElementById('ans2').style.display='block'";
+                            name = "GSMNP" src="blank.jpg" alt="Great Smokey Mountains National Park" width="100%" height="auto">
+                            <p id="ans2" onclick="answer(this, 1)">Click Here for the Answer!</p>                        
+                        </div>
+                        <div class="cards">
+                            <img onmouseenter="SNP.src='sequoia.jpg'; document.getElementById('ans3').style.display='block'";
+                            name = "SNP" src="blank.jpg" alt="Sequoia National Park" width="100%" height="auto">
+                            <p id="ans3"onclick="answer(this, 2)">Click Here for the Answer!</p>                        
+                        </div>
+                        <div class="cards">
+                            <img onmouseenter="GCNP.src='grcanyon.jpg'; document.getElementById('ans4').style.display='block'";
+                            name = "GCNP" src="blank.jpg" alt="Grand Canyon National Park" width="100%" height="auto">
+                            <p id="ans4" onclick="answer(this, 3)">Click Here for the Answer!</p>                        
+                        </div>
+                    </div>
+                    <div class="ending">
+                        <h2>How many did you get correct?</h2>
+                        <button onclick="correct(0)">0</button>
+                        <button onclick="correct(1)">1</button>
+                        <button onclick="correct(2)">2</button>
+                        <button onclick="correct(3)">3</button>
+                        <button onclick="correct(4)">4</button>
+                        <h4 id="response"></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="endtitle">
+                <p><a href="../index.html">Back to Landing Page</a></p>
+            </div>
+        </div>
+    </body>
+</html>
